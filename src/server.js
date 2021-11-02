@@ -19,7 +19,10 @@ const io = socketIo(server);
 
 
 io.on("connection", (socket) => {
-    setTimeout(() => 
-    socket.emit("hello"), 
-    5000);
+    // setTimeout(() => 
+    // (socket.broadcast.emit("hello")),
+    //  5000);
+    socket.on("newMessage", (message ) => {
+        socket.broadcast.emit("messageNotice", message);
+    });
 });
