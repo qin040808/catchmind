@@ -12,10 +12,14 @@ app.use(logger("dev"));
 app.get("/",(req, res) => res.render("home"));
 app.use(express.static(join(__dirname, "static")));
 
-
 const server = app.listen(PORT, ()=>{
-    console.log(`Server Running : http://localhost:${PORT}`);
+    console.log(`✅Server Running : http://localhost:${PORT}`);
 })
 const io = socketIo(server);
 
-io.on("connection", () => console.log("somebody connect"));
+
+io.on("connection", (socket) => {
+    setTimeout(() => 
+    socket.emit("hello"), 
+    5000);
+});
