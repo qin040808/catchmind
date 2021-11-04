@@ -1,2 +1,1 @@
-body {
-  background-color: #FF0000; }
+body{background-color:red}::-moz-placeholder{color:red}:-ms-input-placeholder{color:red}::placeholder{color:red}

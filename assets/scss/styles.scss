@@ -3,3 +3,7 @@ $red-color: #FF0000;
 body {
     background-color: $red-color;
 }
+
+::placeholder {
+    color: $red-color;
+}
