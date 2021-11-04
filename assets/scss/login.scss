@@ -1,0 +1,22 @@
+@import "variables";
+input {
+    padding: 10px;
+    border: 0;
+    background-color: $primeColor;
+    box-shadow: $boxShadow;
+    border-radius: 5px;
+    font-size: 14px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.loginBox{
+    box-shadow: $boxShadow;
+    background-color: white;
+    padding: 40px;
+    border-radius: 5px;
+    input {
+        width: 200px;
+    }
+}

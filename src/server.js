@@ -2,6 +2,7 @@ import express from "express";
 import { join } from "path";
 import socketIo from "socket.io";
 import logger from "morgan";
+import socketController from "./socketController";
 
 const app = express();
 const PORT = 4000;
@@ -19,10 +20,5 @@ const io = socketIo(server);
 
 
 io.on("connection", (socket) => {
-    // setTimeout(() => 
-    // (socket.broadcast.emit("hello")),
-    //  5000);
-    socket.on("newMessage", (message ) => {
-        socket.broadcast.emit("messageNotice", message);
-    });
+    socketController(socket);
 });

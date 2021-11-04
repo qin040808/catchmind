@@ -6,8 +6,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", type="text/css", href="/styles/styles.css")
         title catch-mind
-    body 
-        h1 Hello
-        input(placeholder="Enter your soul")
+    body.loggedOut
+        .loginBox 
+            form#jsLogin
+                input(placeholder="Enter your nickname", type="text")
+        .gameContainer
+            h1 You are logged in.
         script(src="/socket.io/socket.io.js")
         script(src="js/main.js")

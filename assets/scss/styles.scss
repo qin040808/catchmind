@@ -1,10 +1,26 @@
-$red-color: #FF0000;
-$grey-color: grey;
-
-body {
-    background-color: $grey-color;
+@import "variables" ;
+@import "login";
+html {
+    height: 100%;
 }
 
-::placeholder {
-    color: $red-color;
+body {
+    min-height: 100%;
+    background-color: $primeColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginBox, .gameContainer {
+        display: none;
+    }
+    &.loggedOut {
+        .loginBox {
+            display: block;
+        }
+    }
+    &.loggedIn {
+        .gameContainer {
+            display: block;
+        }
+    }
 }
