@@ -24,9 +24,25 @@ function styles() {
         .pipe(gulp.dest("src/static/styles"));
 }
 
-function watchMan() {
-    gulp.watch("assets/scss/**/*.scss", styles);
+function js() {
+    return gulp
+        .src("assets/js/main.js")
+        .pipe(
+            bro({
+            transform: [
+                babel.configure({
+                    presets: ["@babel/preset-env"],
+            }),
+        ],
+        })
+    )
+    .pipe(gulp.dest("src/static/js"));
 }
 
-const dev = gulp.series([clean, styles, watchMan]);
+function watchMan() {
+    gulp.watch("assets/scss/**/*.scss", styles);
+    gulp.watch("assets/js/**/*.js", js);
+}
+
+const dev = gulp.series([clean, styles, js, watchMan]);
 export default dev;
