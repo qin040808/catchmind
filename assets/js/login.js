@@ -9,6 +9,8 @@ const logIn = (nickname) => {
 }
 const nickname = localStorage.getItem(NICKNAME);
 
+console.log(window.events);
+
 if (nickname === null) {
     body.className = LOGGED_OUT;
 } else {

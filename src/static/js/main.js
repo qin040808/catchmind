@@ -15,6 +15,7 @@ var logIn = function logIn(nickname) {
 };
 
 var nickname = localStorage.getItem(NICKNAME);
+console.log(window.events);
 
 if (nickname === null) {
   body.className = LOGGED_OUT;
